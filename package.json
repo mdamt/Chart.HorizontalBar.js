@@ -1,0 +1,46 @@
+{
+  "name": "Chart.HorizontalBar.js-labelsWithinChart",
+  "main": "Chart.HorizontalBar.js",
+  "version": "1.0.2-d",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomsouthall/Chart.HorizontalBar.js"
+  },
+  "keywords": [
+    "Chart.js",
+    "chartjs",
+    "bar chart",
+    "horizontal bar chart",
+    "bar charts",
+    "horizontal bar charts"
+  ],
+  "dependencies": {
+    "chart.js": "^1.0.2"
+  },
+  "description": "##This is a Fork from https://github.com/tomsouthall/Chart.HorizontalBar.js adding a package.json so we can use it from npm",
+  "bugs": {
+    "url": "https://github.com/tomsouthall/Chart.HorizontalBar.js/issues"
+  },
+  "homepage": "https://github.com/tomsouthall/Chart.HorizontalBar.js",
+  "_id": "Chart.HorizontalBar.js@1.0.2-d",
+  "dist": {
+    "shasum": "7d8c5ed029b5a238e2aff3ed92782f4412f1f879",
+    "tarball": "http://registry.npmjs.org/Chart.HorizontalBar.js/-/Chart.HorizontalBar.js-1.0.2-d.tgz"
+  },
+  "_from": "Chart.HorizontalBar.js@^1.0.2-d",
+  "_npmVersion": "1.4.3",
+  "_npmUser": {
+    "name": "ezecafre89",
+    "email": "ezecafre@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "ezecafre89",
+      "email": "ezecafre@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_shasum": "7d8c5ed029b5a238e2aff3ed92782f4412f1f879",
+  "_resolved": "https://registry.npmjs.org/Chart.HorizontalBar.js/-/Chart.HorizontalBar.js-1.0.2-d.tgz",
+  "readme": "ERROR: No README data found!"
+}
