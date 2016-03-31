@@ -2,7 +2,7 @@
 	"use strict";
 
 	var root = this,
-		Chart = root.Chart,
+		Chart = root.Chart || require('chart.js'),
 		helpers = Chart.helpers;
 
 
@@ -38,7 +38,10 @@
 		barDatasetSpacing : 1,
 
 		//String - A legend template
-		legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+		legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+
+    // Boolean - Whether to draw the YLabels within each line inside chart
+    labelsWithinChart : false
 
 	};
 
@@ -153,6 +156,9 @@
     			if(this.buildYLabelCounter === 0) this.yLabels = this.xLabels;
           this.xLabels = this.calculatedLabels;
     			this.yLabelWidth = (this.display && this.showLabels) ? helpers.longestText(this.ctx,this.font,this.yLabels) : 0;
+          if (options.labelsWithinChart) {
+            this.yLabelWidth = 0;
+          }
     		},
 
         calculateX : function(index){
@@ -185,7 +191,13 @@
     					ctx.textAlign = "right";
     					ctx.textBaseline = "middle";
     					if (this.showLabels){
-    						ctx.fillText(labelString,xStart - 10,yLabelCenter);
+                var pos = 0;
+                if (options.labelsWithinChart) {
+                  pos = xStart + this.width - 10;
+                } else {
+                  pos = xStart - 10;
+                }
+    						ctx.fillText(labelString,pos,yLabelCenter);
     					}
 
                         if (index === 0 && !drawHorizontalLine) {
